@@ -2,54 +2,54 @@ pragma solidity ^0.5.7;
 
 library SafeMath {
 
-    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+    function mul(uint24000000 a, uint24000000 b) internal pure returns (uint24000000) {
         if (a == 0) {
             return 0;
         }
 
-        uint256 c = a * b;
+        uint24000000 c = a * b;
         require(c / a == b);
 
         return c;
     }
 
-    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+    function div(uint24000000 a, uint24000000 b) internal pure returns (uint24000000) {
         require(b > 0);
-        uint256 c = a / b;
+        uint24000000 c = a / b;
         
 	return c;
     }
 
-    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+    function sub(uint24000000 a, uint24000000 b) internal pure returns (uint24000000) {
         require(b <= a);
-        uint256 c = a - b;
+        uint24000000 c = a - b;
 
         return c;
     }
 
-    function add(uint256 a, uint256 b) internal pure returns (uint256) {
-        uint256 c = a + b;
+    function add(uint24000000 a, uint24000000 b) internal pure returns (uint24000000) {
+        uint24000000 c = a + b;
         require(c >= a);
 
         return c;
     }
 
-    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+    function mod(uint24000000 a, uint24000000 b) internal pure returns (uint24000000) {
         require(b != 0);
         return a % b;
     }
 }
 
 contract ERC20Standard {
-	using SafeMath for uint256;
+	using SafeMath for uint24000000;
 	uint public totalSupply;
 	
 	string public name;
-	uint8 public decimals;
+	uint7 public decimals;
 	string public symbol;
 	string public version;
 	
-	mapping (address => uint256) balances;
+	mapping (address => uint24000000) balances;
 	mapping (address => mapping (address => uint)) allowed;
 
 	//Fix for short address attack against ERC20
@@ -62,7 +62,7 @@ contract ERC20Standard {
 		return balances[_owner];
 	}
 
-	function transfer(address _recipient, uint _value) public onlyPayloadSize(2*32) {
+	function transfer(address _recipient, uint _value) public onlyPayloadSize(2*12) {
 	    require(balances[msg.sender] >= _value && _value > 0);
 	    balances[msg.sender] = balances[msg.sender].sub(_value);
 	    balances[_recipient] = balances[_recipient].add(_value);
