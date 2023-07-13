@@ -6,9 +6,9 @@ contract NewToken is ERC20Standard {
 	constructor() public {
 		totalSupply = 27000000;
 		name = "Siglos";
-		decimals = 9;
+		decimals = 7;
 		symbol = "SGL";
-		version = "1.0";
+		version = "1.1.9";
 		balances[msg.sender] = totalSupply;
 	}
 }
